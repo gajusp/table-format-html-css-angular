@@ -1,0 +1,155 @@
+/* General */
+html {
+    background-color: #fff;
+    height: 100%;
+}
+
+body {
+    font: 16px/26px Arial, Helvetica, sans-serif;
+    width: 940px;
+    padding: 0 10px;
+    margin: 0 auto;
+    background: #fff;
+    color: #000;
+}
+
+a {
+    color: #004b91;
+    text-decoration: none;
+}
+
+a:visited {
+    color: #136;
+}
+
+a:hover {
+    color: #f60;
+    text-decoration: underline;
+}
+
+a:active {
+    color: #000;
+}
+
+a img {
+    border: 0;
+}
+
+table {
+    border-spacing: 0;
+    border-collapse: collapse;
+}
+
+th {
+    text-align: left;
+}
+
+hr {
+    display: none;
+}
+
+form {
+    margin: 0;
+    padding: 0;
+}
+
+.a11y {
+    position: absolute;
+    left: -9999em;
+}
+
+/* Framework overrides */
+.framework {
+    line-height: 1;
+    cursor: default;
+}
+
+.framework h1, .framework h2, .framework h3, .framework h4, .framework h5, .framework h6, .framework p, .framework ol, .framework ul, .framework li {
+    margin: 0;
+    padding: 0;
+    font-size: 13px;
+}
+
+.framework ol, .framework ul, .framework li {
+    list-style: none;
+}
+
+.framework abbr {
+    border-bottom: 0;
+}
+
+/* Element tree */
+#header {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    width: 940px;
+    height: 56px;
+    margin: 0 0 0 -470px;
+}
+
+#site_name {
+    position: absolute;
+    top: 10px;
+    left: 0;
+}
+
+#site_name a {
+    display: block;
+    width: 172px;
+    height: 48px;
+}
+
+#site_name a:hover {
+    width: 180px;
+    background: url("img/logo_kalahari_hover.png") 0 0 no-repeat;
+}
+
+#site_name a:hover img {
+    display: none;
+}
+
+#content {
+    margin-top: 77px;
+    line-height: 1.3;
+}
+
+#footer {
+    clear: both;
+    padding-bottom: 10px;
+    margin-top: 20px;
+}
+
+#footer_trailer {
+    color: #666;
+}
+
+#footer_terms {
+    clear: both;
+    font-size: 10px;
+}
+
+#footer_terms a {
+    display: inline-block;
+    padding-right: 5px;
+    border-right: #ccc solid 1px;
+    margin-right: 5px;
+}
+
+/* test styles */
+
+textarea {
+    width: 100%;
+    height: 480px;
+    font-family: monospace;
+}
+
+textarea#carousel_html {
+    height: 100px;
+}
+
+article {
+    padding: 30px 0;
+    margin: 30px 0;
+    border-top: 2px solid #000;
+}

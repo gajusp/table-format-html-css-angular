@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Zensar Exercise</title>
+    <meta name="description" content=""/>
+    <link rel="shortcut icon" href="img/favicon.png">
+    <link rel="stylesheet" href="css/style.css" media="screen, projection, handheld, tv">
+</head>
+
+<body>
+
+<div ng-app="zensarTaskApp" ng-controller="TableCtrl">
+
+    <div id="other_formats" class="panel panel_chrome">
+        <div class="panel_header">
+            <h3>Table Data Other Formats</h3>
+        </div>
+        <div class="panel_content">
+            <table summary="A table listing various other formats for this product">
+                <thead>
+                <tr>
+                    <th scope="col">Other Formats</th>
+                    <th scope="col" class="site amount"><span>Price</span></th>
+                    <th scope="col" class="market_place amount"><span>New from</span></th>
+                    <th scope="col" class="market_place amount"><span>Used from</span></th>
+                    <th scope="col" class="market_place amount"><span>Edit</span></th>
+                    <th scope="col" class="market_place amount"><span>Delete</span></th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr class="active" data-ng-repeat="item in tableDataArr">
+                    <th scope="col">
+                        <a href="">{{item.otherformat}}</a>
+                    </th>
+                    <td scope="col" class="site amount">
+                        <span>{{item.price}}</span>
+                    </td>
+                    <td scope="col" class="market_place amount">
+                        <span>{{item.newfrom}}</span>
+                    </td>
+                    <td scope="col" class="market_place amount">
+                        <span>{{item.usedfrom}}</span>
+                    </td>
+                    <td scope="col" class="market_place amount">
+                       <span data-ng-click="onUpdateData(item, $index)">
+                            <img src="assets/edit-svg.svg" width="24px;" height="24px;">
+                        </span>
+                    </td>
+                    <td scope="col" class="market_place amount">
+                    <span data-ng-click="onDeleteData(item)">
+                        <img src="assets/delete-svg.svg" width="24px;" height="24px;">
+                    </span>
+                </tr>
+                </tbody>
+            </table>
+            <form name="updateForm" novalidate>
+                <span>
+                    <input name="otherFormats" type="text" data-ng-model="formObj.otherformat" required="">
+                    <input name="price" type="text" data-ng-model="formObj.price" required="">
+                    <input name="newForm" type="text" data-ng-model="formObj.newfrom" required="">
+                    <input name="usedForm" type="text" data-ng-model="formObj.usedfrom" required="">
+                </span>
+                <br>
+                <button type="submit" data-ng-click="onAddUpdateDetails(updateForm)"
+                        data-ng-disabled="!updateForm.$valid">
+                    {{updateFormBtn}}
+                </button>
+            </form>
+        </div>
+    </div>
+
+</div>
+
+<!-- angular lib-->
+<script src="libs/angular/angular.min.js"></script>
+<!-- table controller -->
+<script src="controller/tableCtrl.js"></script>
+
+</body>
+</html>
