@@ -38,6 +38,8 @@ app.controller('TableCtrl', function ($scope) {
             } else {
                 //update row
                 $scope.tableDataArr[$scope.selectedIndex] = $scope.formObj;
+                //clear index
+                $scope.selectedIndex = -1;
             }
             $scope.updateFormBtn = "Add New Row";
             $scope.formObj = {otherformat: "", price: "", newfrom: "", usedfrom: ""};
