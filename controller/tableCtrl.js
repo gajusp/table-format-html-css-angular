@@ -1,48 +1,49 @@
 var app = angular.module('zensarTaskApp', []);
-app.controller('TableCtrl', function ($scope) {
+app.controller('TableCtrl', function () {
     console.log("======= TableCtrl ========");
-    $scope.formObj = {otherformat: "", price: "", newfrom: "", usedfrom: ""};
-    $scope.updateFormBtn = "Add New Row";
-    $scope.selectedIndex = -1;
-    $scope.tableDataArr = [
-        {otherformat: "Hardcover", price: "R 300", newfrom: "R 334.99", usedfrom: "R 269.99"},
-        {otherformat: "Paperback", price: "R 150.00", newfrom: "R 169.99", usedfrom: "R 119.99"},
-        {otherformat: "Audio, CD, Audiobook, Unabridge", price: "R 180.00", newfrom: "R 89.99", usedfrom: "R 60.99"},
-        {otherformat: "Unknown Binding", price: "R 50.00", newfrom: "R 50.00", usedfrom: "R 50.00"}
+    var tbCtrl = this;
+    tbCtrl.formObj = {otherformat: "", price: "", newfrom: "", usedfrom: ""};
+    tbCtrl.updateFormBtn = "Add New Row";
+    tbCtrl.selectedIndex = -1;
+    tbCtrl.tableDataArr = [
+        {otherformat: "Hardcover", price: "300", newfrom: "334.99", usedfrom: "269.99"},
+        {otherformat: "Paperback", price: "150.00", newfrom: "169.99", usedfrom: "119.99"},
+        {otherformat: "Audio, CD, Audiobook, Unabridge", price: "180.00", newfrom: "89.99", usedfrom: "60.99"},
+        {otherformat: "Unknown Binding", price: "50.00", newfrom: "50.00", usedfrom: "50.00"}
     ];
 
     /**
      * selected item in row
      */
-    $scope.onUpdateData = function (item, indx) {
-        $scope.formObj = angular.copy(item);
-        $scope.selectedIndex = indx;
-        $scope.updateFormBtn = "Update Details";
+    tbCtrl.onUpdateData = function (item, indx) {
+        tbCtrl.formObj = angular.copy(item);
+        tbCtrl.selectedIndex = indx;
+        tbCtrl.updateFormBtn = "Update Details";
     };
 
     /**
      * Update the selected data
      */
-    $scope.onDeleteData = function (indx) {
-        $scope.tableDataArr.length > 0 && $scope.tableDataArr.splice(indx, 1);
+    tbCtrl.onDeleteData = function (indx) {
+        tbCtrl.tableDataArr.length > 0 && tbCtrl.tableDataArr.splice(indx, 1);
     };
 
     /**
      * Update details
      */
-    $scope.onAddUpdateDetails = function (updateForm) {
+    tbCtrl.onAddUpdateDetails = function (updateForm) {
         if (updateForm.$valid) {
             //add row
-            if ($scope.selectedIndex === -1) {
-                $scope.tableDataArr.push($scope.formObj);
+            if (tbCtrl.selectedIndex === -1) {
+                tbCtrl.tableDataArr.push(tbCtrl.formObj);
             } else {
                 //update row
-                $scope.tableDataArr[$scope.selectedIndex] = $scope.formObj;
+                tbCtrl.tableDataArr[tbCtrl.selectedIndex] = tbCtrl.formObj;
                 //clear index
-                $scope.selectedIndex = -1;
+                tbCtrl.selectedIndex = -1;
             }
-            $scope.updateFormBtn = "Add New Row";
-            $scope.formObj = {otherformat: "", price: "", newfrom: "", usedfrom: ""};
+            tbCtrl.updateFormBtn = "Add New Row";
+            tbCtrl.formObj = {otherformat: "", price: "", newfrom: "", usedfrom: ""};
         }
     };
 });

@@ -6,9 +6,9 @@ html {
 
 body {
     font: 16px/26px Arial, Helvetica, sans-serif;
-    width: 940px;
-    padding: 0 10px;
-    margin: 0 auto;
+    width: 100%;
+    padding: 10px 10px;
+    margin: 2% 10%;
     background: #fff;
     color: #000;
 }
@@ -40,116 +40,151 @@ table {
     border-collapse: collapse;
 }
 
-th {
+.panel_content > table {
+    min-width: 80%;
+    max-width: 100%;
+    color: #314351;
+    font-size: 0.857em;
+    line-height: 1em;
+    margin-bottom: 17px;
+    font-family: "museo-sans", sans-serif;
+    border: 2px solid #BCBABA;
+    border-radius: 8px;
+}
+
+.panel_content > table th,
+.panel_content > table td {
+    border-bottom: 1px solid #BCBABA;
+    padding: 10px;
     text-align: left;
+    vertical-align: middle;
 }
 
-hr {
-    display: none;
+.panel_content > table thead th {
+    border-top: 1px solid #BCBABA;
 }
 
-form {
-    margin: 0;
-    padding: 0;
+table th {
+    background-color: #f0f0f0;
 }
 
-.a11y {
-    position: absolute;
-    left: -9999em;
+table th:nth-child(2),
+table td:nth-child(2) {
+    text-align: right;
+    border-left: 1px solid #f6cdb1;
+    width: 100px;
 }
 
-/* Framework overrides */
-.framework {
-    line-height: 1;
-    cursor: default;
+.priceDivClass {
+    height: 55px;
+    margin: -35px -12px -17px -14px;
+    border-radius: 8px 8px 0 0;
+    background-color: #f6cdb1;
+    border-style: solid;
+    border-left-color: #f6cdb1;
+    border-top-color: #c2100d;
+    border-bottom-width: 0;
+    border-right-width: 0;
+    border-left-width: 0px;
+    border-top-width: 1px;
+    overflow: hidden;
 }
 
-.framework h1, .framework h2, .framework h3, .framework h4, .framework h5, .framework h6, .framework p, .framework ol, .framework ul, .framework li {
-    margin: 0;
-    padding: 0;
-    font-size: 13px;
+table td:nth-child(2) {
+    border-left: 1px solid #c2100d
 }
 
-.framework ol, .framework ul, .framework li {
-    list-style: none;
+table th:nth-child(3),
+table td:nth-child(3) {
+    text-align: right;
+    border-left: 1px solid #cfcfcf;
+    border-right: 1px solid #cfcfcf;
+    width: 100px;
 }
 
-.framework abbr {
-    border-bottom: 0;
+table th:nth-child(4),
+table td:nth-child(4) {
+    text-align: right;
+    border-left: 1px solid #cfcfcf;
+    border-right: 1px solid #cfcfcf;
+    width: 100px;
 }
 
-/* Element tree */
-#header {
-    position: absolute;
-    top: 0;
-    left: 50%;
-    width: 940px;
-    height: 56px;
-    margin: 0 0 0 -470px;
+table th:nth-child(5),
+table td:nth-child(5) {
+    text-align: right;
+    width:60px;
 }
 
-#site_name {
-    position: absolute;
-    top: 10px;
-    left: 0;
+.site {
+    /* background: #ffaaaa !important;
+    padding: 34px 13px 20px 66px;
+    border-top-right-radius: 5px;
+    border-top-left-radius: 5px;*/
+    /* border: 1px solid #d63b3b;*/
 }
 
-#site_name a {
-    display: block;
-    width: 172px;
-    height: 48px;
+.amount {
+    color: #c2100d;
 }
 
-#site_name a:hover {
-    width: 180px;
-    background: url("img/logo_kalahari_hover.png") 0 0 no-repeat;
+.market_place {
+
 }
 
-#site_name a:hover img {
-    display: none;
+.market_place img {
+    cursor: pointer;
 }
 
-#content {
-    margin-top: 77px;
-    line-height: 1.3;
+.form-input {
 }
 
-#footer {
-    clear: both;
-    padding-bottom: 10px;
-    margin-top: 20px;
+.other-format-input {
+    padding-left: 5px;
+    border-radius: 5px;
+    border: 1px solid #bbb;
+    width: 43%;
+    height: 24px;
 }
 
-#footer_trailer {
-    color: #666;
+.price-input {
+    padding-left: 5px;
+    border-radius: 5px;
+    border: 1px solid #bbb;
+    width: 9%;
+    height: 24px;
 }
 
-#footer_terms {
-    clear: both;
-    font-size: 10px;
+.new-form-input {
+    padding-left: 5px;
+    border-radius: 5px;
+    border: 1px solid #bbb;
+    width: 9%;
+    height: 24px;
 }
 
-#footer_terms a {
-    display: inline-block;
-    padding-right: 5px;
-    border-right: #ccc solid 1px;
-    margin-right: 5px;
+.used-form-input {
+    padding-left: 5px;
+    border-radius: 5px;
+    border: 1px solid #bbb;
+    width: 9%;
+    height: 24px;
 }
 
-/* test styles */
-
-textarea {
-    width: 100%;
-    height: 480px;
-    font-family: monospace;
+.btn {
+    margin: 10px 0px;
+    padding: 0px 10px;
+    font-size: 12px;
+    font-weight: bold;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    background-color: #e5e5e5;
+    color: #204995;
+    height: 30px;
+    width: 130px;
 }
 
-textarea#carousel_html {
-    height: 100px;
-}
-
-article {
-    padding: 30px 0;
-    margin: 30px 0;
-    border-top: 2px solid #000;
+.btn:disabled,
+.btn[disabled] {
+    color: #908e8e;
 }
