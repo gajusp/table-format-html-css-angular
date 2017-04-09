@@ -1,15 +1,10 @@
 /**
- * onlyNum & restrict 5 char length , A directive that allow only numbers
+ * A directive that allow only numbers
  */
 angular.module('zensarTaskApp').directive('allowOnlyNumbers', function () {
     return {
         restrict: 'A',
         link: function (scope, elm, attr) {
-            elm.on('input load', function () {
-                if (String(attr.allowOnlyNumbers) === 'dial' && String(this.value.charAt(0)) === '0') {
-                    this.value = '';
-                }
-            });
             elm.on('keydown', function (event) {
                 if (event.which === 64 || event.which === 16) {
                     // to allow numbers
@@ -23,8 +18,7 @@ angular.module('zensarTaskApp').directive('allowOnlyNumbers', function () {
                 } else if ([8, 13, 27, 37, 38, 39, 40, 190, 110].indexOf(event.which) > -1) {
                     // to allow backspace, enter, escape, arrows
                     return true;
-                } else if (this.value && this.value.split(".").length > 2) {
-                    this.value = this.value.subString(this.value.lastIndexOf(".")-1, 2);
+                } else {
                     event.preventDefault();
                     // to stop others
                     return false;

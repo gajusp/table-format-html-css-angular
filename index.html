@@ -18,51 +18,61 @@
             <h3>Table Data Other Formats</h3>
         </div>
         <div class="panel_content">
-            <table summary="A table listing various other formats for this product">
+            <table summary="A table listing various other formats for this product" class="table-style">
                 <thead>
                 <tr>
                     <th scope="col">Other Formats</th>
                     <th scope="col" class="site">
-                        <div class="priceDivClass">
-                        <span>Price</span>
-                        </div>
+                        Price
                     </th>
-                    <th scope="col" class="market_place"><span>New from</span></th>
+                    <th></th>
+                    <th scope="col" class="market_place">
+                        New from
+                    </th>
+                    <th></th>
                     <th scope="col" class="market_place"><span>Used from</span></th>
+                    <th></th>
                     <th scope="col" class="market_place"></th>
                 </tr>
                 </thead>
-                <tbody>
-                <tr class="active" data-ng-repeat="item in tbCtrl.tableDataArr">
-                    <td scope="col">
-                        <a href="">{{item.otherformat}}</a>
-                    </td>
-                    <td scope="col" class="site amount">
-                        <span>R {{item.price}}</span>
-                    </td>
-                    <td scope="col" class="market_place">
-                        <span>R {{item.newfrom}}</span>
-                    </td>
-                    <td scope="col" class="market_place">
-                        <span>R {{item.usedfrom}}</span>
-                    </td>
-                    <td scope="col" class="market_place">
-                       <span data-ng-click="tbCtrl.onUpdateData(item, $index)">
-                            <img src="assets/edit-svg.svg" width="24px;" height="24px;">
-                        </span>
-                        <span data-ng-click="tbCtrl.onDeleteData(item)">
-                            <img src="assets/delete-svg.svg" width="24px;" height="24px;">
-                        </span>
-                    </td>
-                </tr>
-                </tbody>
+                    <tbody>
+                        <tfoot>
+                            <tr class="active" data-ng-repeat="item in tbCtrl.tableDataArr">
+                                <td scope="col">
+                                    <a href="">{{item.otherformat}}</a>
+                                </td>
+                                <td scope="col" class="site amount first">
+                                    R {{item.price}}
+                                </td>
+                                <td></td>
+                                <td scope="col" class="market_place">
+                                    <span>R {{item.newfrom}}</span>
+                                </td>
+                                <td></td>
+                                <td scope="col" class="market_place last">
+                                    <span>R {{item.usedfrom}}</span>
+                                </td>
+                                <td></td>
+                                <td scope="col" class="market_place">
+                                           <span data-ng-click="tbCtrl.onUpdateData(item, $index)">
+                                                <img src="assets/edit-svg.svg" width="24px;" height="24px;">
+                                            </span>
+                                    <span data-ng-click="tbCtrl.onDeleteData(item)">
+                                                <img src="assets/delete-svg.svg" width="24px;" height="24px;">
+                                            </span>
+                                </td>
+                            </tr>
+                        </tfoot>
+                    </tbody>
             </table>
             <form name="updateForm" class="form-input" novalidate>
                 <span>
                     <input name="otherFormats" placeholder="Other Formats" type="text" class="other-format-input"
                            data-ng-model="tbCtrl.formObj.otherformat" required="">
-                    <input name="price" placeholder="Price" type="text" class="price-input" data-ng-model="tbCtrl.formObj.price"
+                    <input name="price" placeholder="Price" type="text" class="price-input"
+                           data-ng-model="tbCtrl.formObj.price"
                            required="" allow-only-numbers>
+                    <span class="emptyDiv"></span>
                     <input name="newForm" placeholder="New Form" type="text" class="new-form-input"
                            data-ng-model="tbCtrl.formObj.newfrom" required="" allow-only-numbers>
                     <input name="usedForm" placeholder="Used Form" type="text" class="used-form-input"
